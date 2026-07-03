@@ -1,48 +1,70 @@
-// Mobile Navigation
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+document.addEventListener("DOMContentLoaded", () => {
+    const lightbox = document.getElementById("videoLightbox");
+    const lightboxVideo = document.getElementById("cleanVideoPlayer"); 
+    const videoSource = lightbox ? lightbox.querySelector("source") : null;
+    const closeBtn = document.querySelector(".close-lightbox");
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
+    // Unified selector for any asset meant to trigger the video player
+    const playTriggers = document.querySelectorAll('.play-trigger, [order-number]');
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-menu a').forEach(n => n.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-}));
-
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+    // 1. Lightbox functionality for triggers
+    playTriggers.forEach(trigger => {
+        trigger.addEventListener("click", function() {
+            // Pick up the local path string assigned to the custom attribute
+            const targetVideo = this.getAttribute("data-video");
+            
+            if (targetVideo && lightbox && lightboxVideo) {
+                // Safely update or instantiate internal source element pointers
+                let activeSource = lightboxVideo.querySelector("source");
+                if (!activeSource) {
+                    activeSource = document.createElement("source");
+                    lightboxVideo.appendChild(activeSource);
+                }
+                
+                activeSource.src = targetVideo;
+                lightboxVideo.load();
+                lightbox.style.display = "flex";
+                lightboxVideo.play().catch(error => {
+                    console.log("Playback interaction error protected by browser policies: ", error);
+                });
+            }
+        });
     });
-});
 
-// Navbar background on scroll
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(10, 10, 10, 0.98)';
-    } else {
-        navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+    // Close Lightbox Window safely
+    const dismissWindow = () => {
+        if (lightbox && lightboxVideo) {
+            lightbox.style.display = "none";
+            lightboxVideo.pause();
+            lightboxVideo.currentTime = 0;
+        }
+    };
+
+    if (closeBtn) {
+        closeBtn.addEventListener("click", dismissWindow);
     }
-});
+    
+    if (lightbox) {
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) dismissWindow();
+        });
+    }
 
-// Simple form handling
-document.querySelector('.contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('Thank you for your message! We will get back to you soon.');
-    this.reset();
-});
+    // 2. Smooth Scroll Animation Observer (Reveal on Scroll)
+    const scrollReveal = () => {
+        const reveals = document.querySelectorAll(".reveal");
+        const windowHeight = window.innerHeight;
+        const revealPoint = 150;
 
-// Lazy loading for project images (you can add this later)
-const projectImages = document.querySelectorAll('.project-image');
+        reveals.forEach(element => {
+            const revealTop = element.getBoundingClientRect().top;
+            if (revealTop < windowHeight - revealPoint) {
+                element.classList.add("active");
+            }
+        });
+    };
+
+    window.addEventListener("scroll", scrollReveal);
+    // Initial call to catch elements already in the viewport
+    scrollReveal();
+});
