@@ -3,160 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GACUMI Films - Cinematic Storytelling</title>
+    <title>GACUMI | Film Production Company</title>
+    <!-- Modern Sans-Serif Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <h2>GACUMI FILMS</h2>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#showreel">Showreel</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="logo">
+            <img src="images/logo.png" alt="GACUMI Logo">
+        </div>
+        <nav class="nav-menu">
+            <a href="#hero" class="active">Home</a>
+            <a href="#portfolio">Our Work</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Video Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="video-container">
+            <!-- Loops a snippet of your showreel silently in the background -->
+            <video autoplay loop muted playsinline poster="images/hero-bg.jpg" class="bg-video">
+                <source src="videos/showreel.mkv" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        
         <div class="hero-content">
-            <h1 class="hero-title">WHERE STORIES MEET CINEMA</h1>
-            <p class="hero-subtitle">Crafting compelling visual narratives that captivate audiences worldwide</p>
-            <a href="#showreel" class="cta-button">Watch Showreel</a>
-        </div>
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <div class="arrow"></div>
+            <h1 class="fade-in">Cinematic Storytelling</h1>
+            <p class="fade-in">We bring powerful visions to life through premium lens and light.</p>
+            <button class="cta-btn play-trigger" data-video="videos/showreel.mkv">Watch Showreel</button>
         </div>
     </section>
 
-    <!-- Showreel Section -->
-    <section id="showreel" class="showreel">
-        <div class="container">
-            <h2 class="section-title">SHOWREEL 2024</h2>
-            <div class="video-container">
-                <video controls poster="images/showreel-poster.jpg" class="showreel-video">
-                    <source src="videos/showreel.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+    <!-- Interactive Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="section-title">
+            <h2>Our Portfolio</h2>
+            <p>A glimpse behind the scenes and across our feature productions.</p>
+        </div>
+        
+        <div class="portfolio-grid">
+            <!-- Project Cards linking your WA0009 - WA0012 images -->
+            <div class="project-card reveal" data-video="videos/showreel.mkv">
+                <img src="images/IMG-20250918-WA0009.jpg" alt="Production Still 1">
+                <div class="card-overlay">
+                    <h3>Project Alpha</h3>
+                    <span class="view-tag">Play Clip</span>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">FEATURED PROJECTS</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image"></div>
-                    <div class="project-info">
-                        <h3>Echoes of Time</h3>
-                        <p>Feature Film • 2024</p>
-                        <span class="project-tag">Drama</span>
-                    </div>
+            <div class="project-card reveal" data-video="videos/showreel.mkv">
+                <img src="images/IMG-20250918-WA0010.jpg" alt="Production Still 2">
+                <div class="card-overlay">
+                    <h3>Documentary Series</h3>
+                    <span class="view-tag">Play Clip</span>
                 </div>
-                <div class="project-card">
-                    <div class="project-image"></div>
-                    <div class="project-info">
-                        <h3>Urban Pulse</h3>
-                        <p>Documentary • 2023</p>
-                        <span class="project-tag">Documentary</span>
-                    </div>
+            </div>
+            <div class="project-card reveal" data-video="videos/showreel.mkv">
+                <img src="images/IMG-20250918-WA0011.jpg" alt="Production Still 3">
+                <div class="card-overlay">
+                    <h3>Commercial Reel</h3>
+                    <span class="view-tag">Play Clip</span>
                 </div>
-                <div class="project-card">
-                    <div class="project-image"></div>
-                    <div class="project-info">
-                        <h3>Silent Whispers</h3>
-                        <p>Short Film • 2023</p>
-                        <span class="project-tag">Thriller</span>
-                    </div>
+            </div>
+            <div class="project-card reveal" data-video="videos/showreel.mkv">
+                <img src="images/IMG-20250918-WA0012.jpg" alt="Production Still 4">
+                <div class="card-overlay">
+                    <h3>Narrative Short</h3>
+                    <span class="view-tag">Play Clip</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2 class="section-title">ABOUT GACUMI FILMS</h2>
-                    <p>GACUMI Films is a visionary production company dedicated to pushing the boundaries of cinematic storytelling. We blend artistic vision with technical excellence to create memorable visual experiences.</p>
-                    <div class="stats">
-                        <div class="stat">
-                            <h3>50+</h3>
-                            <p>Projects Completed</p>
-                        </div>
-                        <div class="stat">
-                            <h3>15+</h3>
-                            <p>Industry Awards</p>
-                        </div>
-                        <div class="stat">
-                            <h3>Global</h3>
-                            <p>Audience Reach</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Cinematic Lightbox Overlay (Hidden by Default) -->
+    <div id="videoLightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <div class="lightbox-content">
+            <video id="lightboxVideo" controls controlsList="nodownload">
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">START YOUR PROJECT</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Get in Touch</h3>
-                    <div class="contact-item">
-                        <strong>Email:</strong> hello@gacumifilms.com
-                    </div>
-                    <div class="contact-item">
-                        <strong>Phone:</strong> +1 (555) 123-4567
-                    </div>
-                    <div class="contact-item">
-                        <strong>Studio:</strong> Los Angeles, CA
-                    </div>
-                </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Tell us about your project..." rows="5" required></textarea>
-                    <button type="submit" class="cta-button">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="logo">
-                    <h2>GACUMI FILMS</h2>
-                </div>
-                <p>&copy; 2024 GACUMI Films. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#">Instagram</a>
-                    <a href="#">Vimeo</a>
-                    <a href="#">LinkedIn</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    </div>
 
     <script src="js/script.js"></script>
 </body>
