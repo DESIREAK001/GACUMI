@@ -25,7 +25,11 @@ body {
     overflow-x: hidden;
 }
 
+<<<<<<< HEAD
 /* --- Navigation Header --- */
+=======
+/* --- Update the base header state to allow smooth transitions --- */
+>>>>>>> abae886 (Movies covers that will be added to the portfolio)
 .main-header {
     position: fixed;
     top: 0;
@@ -37,8 +41,23 @@ body {
     padding: 20px 5%;
     z-index: 100;
     background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0));
+<<<<<<< HEAD
 }
 
+=======
+    
+    /* Smoothly animate background color and padding changes */
+    transition: background-color 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* --- NEW: The scrolled state style --- */
+.main-header.scrolled {
+    background: #000000; /* Pure Black background */
+    padding: 15px 5%; /* Optional: slightly shrinks the navbar height for a premium feel */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8); /* Subtle shadow beneath the dark bar */
+}
+
+>>>>>>> abae886 (Movies covers that will be added to the portfolio)
 .logo img {
     height: 45px;
     width: auto;
@@ -272,3 +291,170 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
+<<<<<<< HEAD
+=======
+
+/* --- Additional Typography & Layout rules --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.sub-title {
+    font-family: var(--font-heading);
+    color: var(--accent-color);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* --- About Us Styles --- */
+.about-section {
+    padding: 100px 5%;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.about-text .lead {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.about-text p {
+    color: #888;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.7);
+}
+
+/* --- Contact Us Styles --- */
+.contact-section {
+    padding: 100px 5%;
+    background-color: #0a0a0a;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.contact-info h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    color: #888;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.info-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-item strong {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #ccc;
+    letter-spacing: 1px;
+}
+
+.info-item p {
+    color: var(--text-color);
+    margin-top: 5px;
+}
+
+/* Form inputs styling */
+.contact-form-container {
+    background-color: #121212;
+    padding: 40px;
+    border-radius: 6px;
+    border: 1px solid #1a1a1a;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: #aaa;
+    letter-spacing: 1px;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    background-color: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    padding: 12px 15px;
+    color: white;
+    font-family: var(--font-body);
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+/* --- Footer Styles --- */
+.main-footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #050505;
+    border-top: 1px solid #111;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+/* Responsive Overrides */
+@media (max-width: 900px) {
+    .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
+>>>>>>> abae886 (Movies covers that will be added to the portfolio)
