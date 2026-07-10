@@ -25,11 +25,7 @@ body {
     overflow-x: hidden;
 }
 
-<<<<<<< HEAD
-/* --- Navigation Header --- */
-=======
 /* --- Update the base header state to allow smooth transitions --- */
->>>>>>> abae886 (Movies covers that will be added to the portfolio)
 .main-header {
     position: fixed;
     top: 0;
@@ -41,23 +37,18 @@ body {
     padding: 20px 5%;
     z-index: 100;
     background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0));
-<<<<<<< HEAD
-}
-
-=======
     
     /* Smoothly animate background color and padding changes */
     transition: background-color 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* --- NEW: The scrolled state style --- */
+/* --- The scrolled state style --- */
 .main-header.scrolled {
     background: #000000; /* Pure Black background */
-    padding: 15px 5%; /* Optional: slightly shrinks the navbar height for a premium feel */
+    padding: 15px 5%; /* Slightly shrinks the navbar height for a premium feel */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8); /* Subtle shadow beneath the dark bar */
 }
 
->>>>>>> abae886 (Movies covers that will be added to the portfolio)
 .logo img {
     height: 45px;
     width: auto;
@@ -291,8 +282,6 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
-<<<<<<< HEAD
-=======
 
 /* --- Additional Typography & Layout rules --- */
 .container {
@@ -457,4 +446,3 @@ body {
         font-size: 2.5rem;
     }
 }
->>>>>>> abae886 (Movies covers that will be added to the portfolio)
